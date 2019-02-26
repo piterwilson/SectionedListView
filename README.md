@@ -16,33 +16,35 @@ In the end i created a common `protocol` that `UITableView` and `UICollectionVie
 
 ## Solution
 
-Created a protocol to encapsulate the idea of having a single integer describing the position of a cell
+Created a protocol to encapsulate the idea of having a single integer describing the position of a cell.
 
-#### AbsoluteIndexProvider.swift
+__AbsoluteIndexProvider.swift__
+
 ```
-import Foundation
+ import Foundation
 
-protocol AbsoluteIndexProvider {
-    func absoluteIndex(with indexPath: IndexPath) -> Int?
-}
+ protocol AbsoluteIndexProvider {
+     func absoluteIndex(with indexPath: IndexPath) -> Int?
+ }
 ```
 
-Created a protocol to encapsulate the common functionality in `UITableView` and `UICollectionView`, an extended that with the previous `AbsoluteIndexProvider` protocol
+Created a protocol to encapsulate the common functionality in `UITableView` and `UICollectionView`, an extended that with the previously mentioned `AbsoluteIndexProvider` protocol.
 
-#### SectionedListView.swift 
-````
+__SectionedListView.swift__
+
+```
 import Foundation
 import UIKit
 
 protocol SectionedListView: AbsoluteIndexProvider {
-    func numberOfSections() -> Int
+    var numberOfSections: Int { get }
     func numberOfItems(inSection section: Int) -> Int
     func indexPathIsInBounds(_ indexPath: IndexPath) -> Bool
 }
 
 extension SectionedListView {
     func indexPathIsInBounds(_ indexPath: IndexPath) -> Bool {
-        return indexPath.section >= 0 && indexPath.item >= 0 && indexPath.section < numberOfSections() && indexPath.row < numberOfItems(inSection: indexPath.section)
+        return indexPath.section >= 0 && indexPath.item >= 0 && indexPath.section < numberOfSections && indexPath.row < numberOfItems(inSection: indexPath.section)
     }
     func absoluteIndex(with indexPath: IndexPath) -> Int? {
         guard indexPath.isValidforSectionedListView, indexPathIsInBounds(indexPath) else { return nil }
@@ -58,33 +60,26 @@ extension SectionedListView {
 }
 ```
 
-Created a couple more extensions to make `UITableView` and `UICollectionView` comply with `SectionedListView`
+Created one more extension to make `UITableView` comply with `SectionedListView`.
 
-#### UICollectionView+SectionedListView.swift 
-```
-import Foundation
-import UIKit
-
-extension UICollectionView: SectionedListView {
-    func numberOfSections() -> Int {
-        return numberOfSections
-    }
-}
-```
-
-#### UITableView+SectionedListView.swift 
+__UITableView+SectionedListView.swift__
 ```
 import Foundation
 import UIKit
 
 extension UITableView: SectionedListView {
-    func numberOfSections() -> Int {
-        return numberOfSections
-    }
     func numberOfItems(inSection section: Int) -> Int {
         return numberOfRows(inSection: section)
     }
 }
+```
+
+__UICollectionView+SectionedListView.swift__
+```
+import Foundation
+import UIKit
+
+extension UICollectionView: SectionedListView {}
 ```
 
 At the end i also had to create this extension, so that we can validate that the `IndexPath` provided to `absoluteIndex(with indexPath: IndexPath)` is actually valid. The API in `IndexPath` leads us to believe that is properties are not optional, but it's possible to create a `IndexPath` without these properties, If we query `section` on such an `IndexPath` we will get a crash that we can't even catch in swift.
