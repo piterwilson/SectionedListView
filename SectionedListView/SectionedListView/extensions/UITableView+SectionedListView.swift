@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 extension UITableView: SectionedListView {
-    func numberOfSections() -> Int {
-        return numberOfSections
-    }
     func numberOfItems(inSection section: Int) -> Int {
         return numberOfRows(inSection: section)
     }
