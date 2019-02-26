@@ -12,13 +12,13 @@
 		4FFE08D82224FA6500010E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE08D62224FA6500010E23 /* Main.storyboard */; };
 		4FFE08DA2224FA6900010E23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE08D92224FA6900010E23 /* Assets.xcassets */; };
 		4FFE08DD2224FA6900010E23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFE08DB2224FA6900010E23 /* LaunchScreen.storyboard */; };
-		4FFE08F92224FA8700010E23 /* UICollectionView+SectionedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08F32224FA8700010E23 /* UICollectionView+SectionedListView.swift */; };
 		4FFE08FA2224FA8700010E23 /* UITableView+SectionedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08F42224FA8700010E23 /* UITableView+SectionedListView.swift */; };
 		4FFE08FB2224FA8700010E23 /* IndexPath+SectionedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08F52224FA8700010E23 /* IndexPath+SectionedListView.swift */; };
 		4FFE08FC2224FA8700010E23 /* AbsoluteIndexProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08F72224FA8700010E23 /* AbsoluteIndexProvider.swift */; };
 		4FFE08FD2224FA8700010E23 /* SectionedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08F82224FA8700010E23 /* SectionedListView.swift */; };
 		4FFE09002224FAC400010E23 /* UICollectionViewAbsoluteIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08FE2224FAC300010E23 /* UICollectionViewAbsoluteIndexTests.swift */; };
 		4FFE09012224FAC400010E23 /* UITableViewAbsoluteIndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE08FF2224FAC400010E23 /* UITableViewAbsoluteIndexTests.swift */; };
+		4FFE09032225010600010E23 /* UICollectionView+SectionedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE09022225010600010E23 /* UICollectionView+SectionedListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +41,13 @@
 		4FFE08DE2224FA6900010E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FFE08E32224FA6900010E23 /* SectionedListViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SectionedListViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFE08E92224FA6900010E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4FFE08F32224FA8700010E23 /* UICollectionView+SectionedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SectionedListView.swift"; sourceTree = "<group>"; };
 		4FFE08F42224FA8700010E23 /* UITableView+SectionedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+SectionedListView.swift"; sourceTree = "<group>"; };
 		4FFE08F52224FA8700010E23 /* IndexPath+SectionedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+SectionedListView.swift"; sourceTree = "<group>"; };
 		4FFE08F72224FA8700010E23 /* AbsoluteIndexProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsoluteIndexProvider.swift; sourceTree = "<group>"; };
 		4FFE08F82224FA8700010E23 /* SectionedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedListView.swift; sourceTree = "<group>"; };
 		4FFE08FE2224FAC300010E23 /* UICollectionViewAbsoluteIndexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewAbsoluteIndexTests.swift; sourceTree = "<group>"; };
 		4FFE08FF2224FAC400010E23 /* UITableViewAbsoluteIndexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewAbsoluteIndexTests.swift; sourceTree = "<group>"; };
+		4FFE09022225010600010E23 /* UICollectionView+SectionedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SectionedListView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +114,9 @@
 		4FFE08F22224FA8700010E23 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4FFE08F32224FA8700010E23 /* UICollectionView+SectionedListView.swift */,
 				4FFE08F42224FA8700010E23 /* UITableView+SectionedListView.swift */,
 				4FFE08F52224FA8700010E23 /* IndexPath+SectionedListView.swift */,
+				4FFE09022225010600010E23 /* UICollectionView+SectionedListView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -232,9 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FFE08F92224FA8700010E23 /* UICollectionView+SectionedListView.swift in Sources */,
 				4FFE08D52224FA6500010E23 /* ViewController.swift in Sources */,
 				4FFE08D32224FA6500010E23 /* AppDelegate.swift in Sources */,
+				4FFE09032225010600010E23 /* UICollectionView+SectionedListView.swift in Sources */,
 				4FFE08FA2224FA8700010E23 /* UITableView+SectionedListView.swift in Sources */,
 				4FFE08FC2224FA8700010E23 /* AbsoluteIndexProvider.swift in Sources */,
 				4FFE08FB2224FA8700010E23 /* IndexPath+SectionedListView.swift in Sources */,

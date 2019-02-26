@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 protocol SectionedListView: AbsoluteIndexProvider {
-    func numberOfSections() -> Int
+    var numberOfSections: Int { get }
     func numberOfItems(inSection section: Int) -> Int
     func indexPathIsInBounds(_ indexPath: IndexPath) -> Bool
 }
 
 extension SectionedListView {
     func indexPathIsInBounds(_ indexPath: IndexPath) -> Bool {
-        return indexPath.section >= 0 && indexPath.item >= 0 && indexPath.section < numberOfSections() && indexPath.row < numberOfItems(inSection: indexPath.section)
+        return indexPath.section >= 0 && indexPath.item >= 0 && indexPath.section < numberOfSections && indexPath.row < numberOfItems(inSection: indexPath.section)
     }
     func absoluteIndex(with indexPath: IndexPath) -> Int? {
         guard indexPath.isValidforSectionedListView, indexPathIsInBounds(indexPath) else { return nil }
